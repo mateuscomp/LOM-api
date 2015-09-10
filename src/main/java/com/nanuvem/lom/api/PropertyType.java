@@ -146,7 +146,8 @@ public class PropertyType implements Serializable {
 	public String toString() {
 		return "PropertyType [sequence=" + sequence + ", name=" + name
 				+ ", type=" + type + ", configuration=" + configuration
-				+ ", id=" + id + ", version=" + version + "]";
+				+ ", id=" + id + ", version=" + version + ", "
+				+ this.entityType + " ]";
 	}
 
 }

@@ -184,12 +184,12 @@ public class EntityHelper {
 
 		try {
 			createEntityType(namespaceEntityType, nameEntityType);
-			PropertyType propertyType = createOnePropertyType(namespaceEntityType
+			createOnePropertyType(namespaceEntityType
 					+ "." + nameEntityType, null, propertyTypeName, type,
 					configuration);
 
 			Entity entity = EntityHelper.createOneEntity(
-					propertyType.getEntityType(), valueOfCreate);
+					facade.findEntityTypeByFullName(namespaceEntityType + "." + nameEntityType), valueOfCreate);
 
 			Property property = entity.getProperties().get(0);
 			property.setValue(valueOfUpdate);

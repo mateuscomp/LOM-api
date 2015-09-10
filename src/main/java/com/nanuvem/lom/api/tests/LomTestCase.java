@@ -23,11 +23,12 @@ public abstract class LomTestCase {
 	@Before
 	public void init() {
 		facade = createFacade();
+		this.facade.getDaoFactory().createDatabaseSchema();
+
 		EntityTypeHelper.setFacade(facade);
 		PropertyTypeHelper.setFacade(facade);
 		EntityHelper.setFacade(facade);
 
-		this.facade.getDaoFactory().createDatabaseSchema();
 	}
 
 	@After

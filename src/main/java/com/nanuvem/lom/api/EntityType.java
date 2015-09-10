@@ -63,6 +63,7 @@ public class EntityType implements Serializable {
 		this.propertiesTypes = attributes;
 	}
 
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -71,6 +72,7 @@ public class EntityType implements Serializable {
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		result = prime * result
 				+ ((namespace == null) ? 0 : namespace.hashCode());
+		result = prime * result + ((version == null) ? 0 : version.hashCode());
 		return result;
 	}
 
@@ -98,12 +100,17 @@ public class EntityType implements Serializable {
 				return false;
 		} else if (!namespace.equals(other.namespace))
 			return false;
+		if (version == null) {
+			if (other.version != null)
+				return false;
+		} else if (!version.equals(other.version))
+			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "EntityTpe [namespace=" + namespace + ", name=" + name + ", id="
+		return "EntityType [namespace=" + namespace + ", name=" + name + ", id="
 				+ id + ", version=" + version + "]";
 	}
 }
